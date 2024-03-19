@@ -66,7 +66,7 @@ const Todo = () => {
       </h1>
       <form className="p-3 mx-4" onSubmit={handleSubmit}>
         <input
-          className="h-8 w-[20vw] rounded-md p-3 border-solid border-2"
+          className="h-8 w-[20vw] rounded-md p-3 border-solid border-2 border-black	"
           value={input}
           ref={inputRef}
           type="text"
@@ -113,7 +113,7 @@ const Todo = () => {
               <span className="flex items-center space-x-3">
                 <AiFillEdit
                   title="Edit"
-                  className="size-7"
+                  className="size-7 cursor-pointer"
                   onClick={() => onEdit(task.id)}
                 />
                 <MdDelete
