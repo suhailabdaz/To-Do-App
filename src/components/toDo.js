@@ -9,6 +9,7 @@ const Todo = () => {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
   const [editId, seteditId] = useState(0);
+  const [count,setcount]= useState(0)
 
   const inputRef = useRef(null);
 
@@ -30,8 +31,13 @@ const Todo = () => {
           );
           setTasks(updatedTasks);
           seteditId(0);
-        } else {
+        } else  {
+          if(count<=2){
           setTasks([...tasks, { list: input, id: Date.now(), status: false }]);
+          setcount(count+1);
+          }else{
+            alert("limit exceeded")
+          }
         }
         setInput("");
       } else {
@@ -43,6 +49,7 @@ const Todo = () => {
   const deleteTask = (id) => {
     const modified = tasks.filter((task) => task.id !== id);
     setTasks(modified);
+    setcount(count-1)
   };
   const onEdit = (id) => {
     const taskToEdit = tasks.find((task) => task.id == id);
