@@ -14,3 +14,4 @@ A simple To-Do application built with React.
 
 - React: JavaScript library for building user interfaces
 - CSS: Styling
+- TailwindCSS
